@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DocSigner": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\pawel\\source\\repos\\DocSigner\\example.xml\" \"C:\\Users\\pawel\\source\\repos\\DocSigner\" \"C:\\Users\\pawel\\AppData\\Roaming\\Microsoft\\SystemCertificates\\My\\Certificates\\9A539DEFB74A5CA95D885D507ECABE55CEFBEC5D\""
+    }
+  }
+}

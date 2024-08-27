@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person>
+	<name>John Doe</name>
+	<age>30</age>
+	<address>
+		<street>123 Main St</street>
+		<city>Anytown</city>
+		<state>CA</state>
+		<zip>12345</zip>
+	</address>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+			<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+			<Reference URI="">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+				<DigestValue>G2n42H6GlrMAQqfP8LEXkzHfiqT1o4wsxrcv8yOXKoY=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>VTACvdhkaP2CAElL6aVusMHyGNsklEUZLqxWsYgC84MIbEc28QCf6GrY5sheFkrT9os+nxwBnW2kkciskQcQzuQZM8NqfJ/y3JAAu8w2enlsLmEjPeWWfcK6DWCSQdYYuDegq3x+JjRnpuunhMsYPOf2ITPUISzaYiNXrqQRd4HQuBdLXARTJS71WTNMcnijcg0VQL7jMI3nNmpT20GzcaAe1p73E+DYd7qHbvwjBac1k5M7FyUfKAsJewYeN7mqiRI2O6fo5CzTNG6G2xWxnLeP9PTZpGB1vToGFw/m/zcUevquNRDMVuzLfWICtaMCnuBkhpoJfnRFhJChEitOPQ==</SignatureValue>
+		<KeyInfo>
+			<KeyValue>
+				<RSAKeyValue>
+					<Modulus>x9ISWESosLpiqenAAtCjobDjJWfLaRHpZ4rTkUUvEOxj6/AxlMnaWgna2naGp4vAFQID94/CRh67IRauArwE2bthcMwHjcrP5PbBYFh2pK+jDGm7SGOjq3/reZLf2Iy3eMNRM+ifNBcXyRIBbCqYDOr4cZyNxkouQG1lq4BCrqaH4C4DGzyQSRky/0HOguSftjNEWZhLsr7hyztotzbWdVeHAOtxuf8FULltH5ZqkN0tZj32J6j65QSlbaIvoJlHX2+e1etM979c+bPI+GuP1oHFllQ9YaDkEkymOmAn+DxtGavfJJ/ZzwKRnBy43rfBERqgMMTpqgR8wv5NZsSbBQ==</Modulus>
+					<Exponent>AQAB</Exponent>
+				</RSAKeyValue>
+			</KeyValue>
+		</KeyInfo>
+		<Object>
+			<xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/ts/101948/v1.2.1/">
+				<xades:SignedProperties Id="ID-8fbeeaea-126f-4c14-a775-4a932ea086b6">
+					<xades:SignedSignatureProperties>
+						<SigningTime xmlns="">2024-08-27T19:22:37Z</SigningTime>
+					</xades:SignedSignatureProperties>
+					<xades:SignedDataObjectProperties />
+				</xades:SignedProperties>
+			</xades:QualifyingProperties>
+		</Object>
+	</Signature>
+</person>
