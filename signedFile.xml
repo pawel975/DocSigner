@@ -8,7 +8,7 @@
 		<state>CA</state>
 		<zip>12345</zip>
 	</address>
-	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+	<Signature Id="Signature" xmlns="http://www.w3.org/2000/09/xmldsig#">
 		<SignedInfo>
 			<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
 			<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
@@ -19,23 +19,43 @@
 				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
 				<DigestValue>G2n42H6GlrMAQqfP8LEXkzHfiqT1o4wsxrcv8yOXKoY=</DigestValue>
 			</Reference>
+			<Reference URI="#SignedProperties" Type="http://uri.etsi.org/01903#SignedProperties">
+				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+				<DigestValue>OsAKYI5gCflPDfm7EJvJkkAA8pU+gbGMCrm/v7mRBLQ=</DigestValue>
+			</Reference>
 		</SignedInfo>
-		<SignatureValue>VTACvdhkaP2CAElL6aVusMHyGNsklEUZLqxWsYgC84MIbEc28QCf6GrY5sheFkrT9os+nxwBnW2kkciskQcQzuQZM8NqfJ/y3JAAu8w2enlsLmEjPeWWfcK6DWCSQdYYuDegq3x+JjRnpuunhMsYPOf2ITPUISzaYiNXrqQRd4HQuBdLXARTJS71WTNMcnijcg0VQL7jMI3nNmpT20GzcaAe1p73E+DYd7qHbvwjBac1k5M7FyUfKAsJewYeN7mqiRI2O6fo5CzTNG6G2xWxnLeP9PTZpGB1vToGFw/m/zcUevquNRDMVuzLfWICtaMCnuBkhpoJfnRFhJChEitOPQ==</SignatureValue>
+		<SignatureValue>xYePV1KwdaF/4NpDFQoYWeCHYmtdkZClH6Ifu795gGWjumgjlhkjmKx0hXKJc8/et6Xp7kfIiI8yRwA/+BdYJY65BUZhAyEezMa8R+FLPNTWO6Z4EbpacRpDIaKf3omJquu/lttLeDguLmgk9hgpdUQ4Rkrqw4OmAGOIjW0IHFEsqY332vQaMA1JSeNO0NP9ZCXRseXOsBhlQwrwiBujB1H/rgqJA+8i1mE1UrRN4Wl/reG1VJZfSbVExF6VpDNPZjNLr9Jj93QtBKPDt/BC88T9ItKaQOn9UArUohlh88OJtRTACqp9jJkWUi3mC91KfbzipAWfSv4pXA4lWvIXuA==</SignatureValue>
 		<KeyInfo>
-			<KeyValue>
-				<RSAKeyValue>
-					<Modulus>x9ISWESosLpiqenAAtCjobDjJWfLaRHpZ4rTkUUvEOxj6/AxlMnaWgna2naGp4vAFQID94/CRh67IRauArwE2bthcMwHjcrP5PbBYFh2pK+jDGm7SGOjq3/reZLf2Iy3eMNRM+ifNBcXyRIBbCqYDOr4cZyNxkouQG1lq4BCrqaH4C4DGzyQSRky/0HOguSftjNEWZhLsr7hyztotzbWdVeHAOtxuf8FULltH5ZqkN0tZj32J6j65QSlbaIvoJlHX2+e1etM979c+bPI+GuP1oHFllQ9YaDkEkymOmAn+DxtGavfJJ/ZzwKRnBy43rfBERqgMMTpqgR8wv5NZsSbBQ==</Modulus>
-					<Exponent>AQAB</Exponent>
-				</RSAKeyValue>
-			</KeyValue>
+			<X509Data>
+				<X509Certificate>MIIDDTCCAfWgAwIBAgIJAPSNhOL1376tMA0GCSqGSIb3DQEBCwUAMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0yMzA5MTAxNjA1NDhaFw0yNDA5MTAxNjA1NDhaMBQxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMfSElhEqLC6YqnpwALQo6Gw4yVny2kR6WeK05FFLxDsY+vwMZTJ2loJ2tp2hqeLwBUCA/ePwkYeuyEWrgK8BNm7YXDMB43Kz+T2wWBYdqSvowxpu0hjo6t/63mS39iMt3jDUTPonzQXF8kSAWwqmAzq+HGcjcZKLkBtZauAQq6mh+AuAxs8kEkZMv9BzoLkn7YzRFmYS7K+4cs7aLc21nVXhwDrcbn/BVC5bR+WapDdLWY99ieo+uUEpW2iL6CZR19vntXrTPe/XPmzyPhrj9aBxZZUPWGg5BJMpjpgJ/g8bRmr3ySf2c8CkZwcuN63wREaoDDE6aoEfML+TWbEmwUCAwEAAaNiMGAwDAYDVR0TAQH/BAIwADAOBgNVHQ8BAf8EBAMCBaAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwEwFwYDVR0RAQH/BA0wC4IJbG9jYWxob3N0MA8GCisGAQQBgjdUAQEEAQIwDQYJKoZIhvcNAQELBQADggEBAKqLRDHpktqyPULvQ0MfqfMkgCH5Ant+fQfefNAf3aOpPNTSWT/M5LZCXdMLfbQsB1rpx/OXbnBv/TMxybLk6CBYTYAbAeVM/2mUpHvbh2BML6RX+e9T3ynozptjEHa4A24n79P+aVAIZhJ4kwP/+8bmWJN705G3T4SnLwmJraV4y9GppAFxcuQPnf+9U6dRmzDwSq+qgE6YK+G6DgSC0KbH6AaYCWu+BAHFg0wgYHVAeN9LOIX30aYZaxaeH6YeJWQHLdCAlhxYexowllUXeMdg250QGpAJK9u8mHbJ5mZAadViAjBL50Z8t7SyNGNikzMU6zMrSprP7WDu2/Yx6Hk=</X509Certificate>
+			</X509Data>
 		</KeyInfo>
 		<Object>
-			<xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/ts/101948/v1.2.1/">
-				<xades:SignedProperties Id="ID-8fbeeaea-126f-4c14-a775-4a932ea086b6">
+			<xades:QualifyingProperties Target="#Signature" xmlns:xades="http://uri.etsi.org/01903/v1.3.2#">
+				<xades:SignedProperties Id="SignedProperties">
 					<xades:SignedSignatureProperties>
-						<SigningTime xmlns="">2024-08-27T19:22:37Z</SigningTime>
+						<xades:SigningTime>2024-08-27T19:39:38Z</xades:SigningTime>
+						<xades:SigningCertificate>
+							<xades:Cert>
+								<xades:CertDigest>
+									<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+									<DigestValue>mlOd77dKXKldiF1Qfsq+Vc777F0=</DigestValue>
+								</xades:CertDigest>
+								<xades:IssuerSerial>
+									<X509IssuerName>CN=localhost</X509IssuerName>
+									<X509SerialNumber>17621887027293175469</X509SerialNumber>
+								</xades:IssuerSerial>
+							</xades:Cert>
+						</xades:SigningCertificate>
 					</xades:SignedSignatureProperties>
-					<xades:SignedDataObjectProperties />
+					<xades:SignedDataObjectProperties>
+						<xades:CommitmentTypeIndication>
+							<xades:CommitmentTypeId>
+								<xades:Identifier>http://uri.etsi.org/01903/v1.2.2#ProofOfApproval</xades:Identifier>
+							</xades:CommitmentTypeId>
+							<xades:AllSignedDataObjects />
+						</xades:CommitmentTypeIndication>
+					</xades:SignedDataObjectProperties>
 				</xades:SignedProperties>
 			</xades:QualifyingProperties>
 		</Object>

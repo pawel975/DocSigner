@@ -22,45 +22,14 @@ namespace DocSigner
             XmlDocument xmlDocument = new();
             xmlDocument.Load(new XmlTextReader(XmlToSignPath));
 
-            // Create signature
-            SignedXml signedXml = new SignedXml(xmlDocument) { SigningKey = rsaPrivateKey };
+            
+            // Create Signature
+            XmlElement xmlDigitalSignature = Signature.SignWithXAdES(cert2, xmlDocument);
 
-            // Create File Reference
-            Reference reference = new Reference() { Uri = "" };
-            reference.AddTransform(new XmlDsigEnvelopedSignatureTransform());
-            signedXml.AddReference(reference);
-
-            // Create a KeyInfo object
-            KeyInfo keyInfo = new KeyInfo();
-            RSA publicKey = cert2.GetRSAPublicKey();
-            keyInfo.AddClause(new RSAKeyValue(publicKey));
-            signedXml.KeyInfo = keyInfo;
-
-            // Create Xades Reference
-            string xadesSignedPropertiesId = Guid.NewGuid().ToString();
-            Reference xadesReference = new() { Uri = $"#ID-{xadesSignedPropertiesId}" };
-
-            // Attach xades Reference 
-            signedXml.AddReference(xadesReference);
-
-            // Attach xades
-            signedXml.AddObject(XadesMethods.CreateXadesBesDataObject(xadesSignedPropertiesId));
-
-            // Compute signature
-            signedXml.ComputeSignature();
-
-            Console.WriteLine(signedXml.CheckSignature());
-
-            // Assign signature to document
-            XmlElement xmlDigitalSignature = signedXml.GetXml();
+            // Attach Signature to document
             xmlDocument.DocumentElement?.AppendChild(xmlDocument.ImportNode(xmlDigitalSignature, true));
-            Console.WriteLine(signedXml.CheckSignature());
 
-            //if (xmlDocument.FirstChild is XmlDeclaration)
-            //{
-            //    xmlDocument.RemoveChild(xmlDocument.FirstChild);
-            //}
-
+            // Write whole document with signature into xml file
             XmlTextWriter xmltw = new XmlTextWriter(Path.Combine(SignedXmlOutputDir, "signedFile.xml"), new UTF8Encoding(false));
             xmlDocument.WriteTo(xmltw);
             xmltw.Close();
